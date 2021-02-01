@@ -10,11 +10,12 @@ mod tests {
             2,
             10054511,
             content::Code::new("Example Code".to_string(), content::Lang::Js),
+            "http://172.32.5.72:3000".to_string(),
         ));
 
-        assert_eq!(que.is_IDLE(), false);
+        assert_eq!(que.is_idle(), false);
         assert_eq!(que.get().unwrap().sid, 10054511);
         assert!(que.get().is_none());
-        assert_eq!(que.is_IDLE(), true);
+        assert_eq!(que.is_idle(), true);
     }
 }

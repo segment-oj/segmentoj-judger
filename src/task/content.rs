@@ -88,14 +88,16 @@ pub struct Task {
     pub pid: i32,
     pub sid: u32,
     pub code: Code,
+    pub test_data_uri: String,
 }
 
 impl Task {
-    pub fn new(pid: i32, sid: u32, code: Code) -> Self {
+    pub fn new(pid: i32, sid: u32, code: Code, test_data_uri:String) -> Self {
         Self {
             pid: pid,
             sid: sid,
             code: code,
+            test_data_uri: test_data_uri,
         }
     }
 
@@ -113,6 +115,7 @@ impl Task {
             pid: parsed["pid"].as_i32().unwrap(),
             sid: parsed["sid"].as_u32().unwrap(),
             code: Code::from(&parsed["code"]),
+            test_data_uri: parsed["testdata"].as_str().unwrap().to_string(),
         }
     }
 }

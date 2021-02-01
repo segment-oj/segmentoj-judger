@@ -4,6 +4,7 @@ use directories::ProjectDirs;
 pub struct Config {
     pub max_parallel_task: u8,
     pub leader_uri: String,
+    pub test_data_download_location: String,
 }
 
 impl Config {
@@ -14,6 +15,7 @@ impl Config {
         Self {
             max_parallel_task: parsed["max_parallel_task"].as_u8().unwrap(),
             leader_uri: parsed["leader_uri"].as_str().unwrap().to_string(),
+            test_data_download_location: parsed["test_data_download_location"].as_str().unwrap().to_string(),
         }
     }
 }

@@ -16,7 +16,7 @@ impl Queue {
         self.task_que.push_back(t);
     }
 
-    pub fn is_IDLE(&self) -> bool {
+    pub fn is_idle(&self) -> bool {
         self.task_que.len() == 0
     }
 
